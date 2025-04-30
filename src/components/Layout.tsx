@@ -9,7 +9,7 @@ export default function Layout({ children }: Props) {
       <header className="bg-blue-700 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="font-bold text-lg">
-            IngressoAPP
+            Eventos Dev
           </Link>
         </div>
       </header>
