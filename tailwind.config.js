@@ -1,19 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-<<<<<<< HEAD
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-=======
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./src/components/**/*.{js,ts,jsx,tsx}",
->>>>>>> temp-branch
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-<<<<<<< HEAD
-}
-=======
 };
->>>>>>> temp-branch

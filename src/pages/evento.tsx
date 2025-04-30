@@ -20,9 +20,9 @@ export default function Evento() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-          <Image src="/images/show1.png" alt="Show DJ Code" width={100} height={50} className="rounded shadow-md object-cover"></Image>
-          <Image src="/images/show2.png" alt="Banda StackOverflow ao vivo" width={100} height={50} className="rounded shadow-md object-cover"></Image>
-          <Image src="/images/show3.png" alt="The Bug Fixers em ação" width={100} height={50} className="rounded shadow-md object-cover"></Image>
+          <Image src="/images/show1.png" alt="Show DJ Code" width={100} height={50} className="rounded shadow-md object-cover h-48 w-full transition-transform duration-300 hover:scale-105"></Image>
+          <Image src="/images/show2.png" alt="Banda StackOverflow ao vivo" width={100} height={50} className="rounded shadow-md object-cover h-48 w-full transition-transform duration-300 hover:scale-105"></Image>
+          <Image src="/images/show3.png" alt="The Bug Fixers em ação" width={100} height={50} className="rounded shadow-md object-cover h-48 w-full transition-transform duration-300 hover:scale-105"></Image>
         </div>
 
         <Link href="/compra" className="inline-block bg-blue-600 text-white py-2 px-6 rounded hover:bg-green-700 transition"> 

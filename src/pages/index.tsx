@@ -15,9 +15,9 @@ export default function Home() {
         <Image
           src="/images/banner.png"
           alt="Público animado no festival"
-          width={200}
+          width={100}
           height={100}
-          className="w-full rounded shadow-md mb-5"
+          className="rounded shadow-md h-50 object-cover w-full transition-transform duration-300 hover:scale-105"
         />
 
         <p className="mb-6 text-gray-700">
