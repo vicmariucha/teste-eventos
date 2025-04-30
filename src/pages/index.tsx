@@ -15,15 +15,15 @@ export default function Home() {
         <Image
           src="/images/banner.png"
           alt="Público animado no festival"
-          width={100}
-          height={100}
-          className="rounded shadow-md h-50 object-cover w-full transition-transform duration-300 hover:scale-105"
+          width={500}
+          height={50}
+          className="rounded shadow-md object-cover w-full transition-transform duration-300 hover:scale-90"
         />
 
         <p className="mb-6 text-gray-700">
           Um evento que une música e tecnologia como nunca antes!
         </p>
-        <Link href="/evento" className="inline-block bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition"> 
+        <Link href="/evento" className="inline-block bg-purple-500 text-white py-2 px-6 rounded hover:bg-purple-700 transition"> 
           Ver detalhes
         </Link>
       </div>

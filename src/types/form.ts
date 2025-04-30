@@ -1,6 +1,6 @@
 export type FormData = {
-    name: string;
-    email: string;
-    message?: string;
-  };
+  nome: string;
+  email: string;
+  quantidade: number;
+};
   

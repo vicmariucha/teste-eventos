@@ -38,36 +38,38 @@ export default function Compra() {
         <meta name="description" content="Formulário para compra de ingressos" />
       </Head>
 
-      <div className="p-8 max-w-md mx-auto">
-        <h1 className="text-2xl font-bold mb-6">Finalizar compra</h1>
-        <form onSubmit={handleSubmit}>
-        <Input
-          label="Nome completo"
-          name="nome"
-          value={form.nome}
-          onChange={e => setForm({ ...form, nome: e.target.value })}
-          error={errors.nome}/>
+      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
+        <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+          <h1 className="text-2xl font-bold mb-6">Finalizar compra</h1>
+          <form onSubmit={handleSubmit}>
           <Input
-            label="E-mail"
-            name="email"
-            value={form.email}
-            onChange={e => setForm({ ...form, email: e.target.value })}
-            error={errors.email}
-          />
-          <Input
-            label="Quantidade de ingressos"
-            name="quantidade"
-            type="number"
-            min={1}
-            value={form.quantidade}
-            onChange={e => setForm({ ...form, quantidade: Number(e.target.value) })}
-          />
-          <Button type="submit" isLoading={isLoading}>
-            Finalizar compra
-          </Button>
-        </form>
-        {success && <p className="text-green-600 mt-4 font-medium">{success}</p>}
-      </div>
+            label="Nome completo"
+            name="nome"
+            value={form.nome}
+            onChange={e => setForm({ ...form, nome: e.target.value })}
+            error={errors.nome}/>
+            <Input
+              label="E-mail"
+              name="email"
+              value={form.email}
+              onChange={e => setForm({ ...form, email: e.target.value })}
+              error={errors.email}
+            />
+            <Input
+              label="Quantidade de ingressos"
+              name="quantidade"
+              type="number"
+              min={1}
+              value={form.quantidade}
+              onChange={e => setForm({ ...form, quantidade: Number(e.target.value) })}
+            />
+            <Button type="submit" isLoading={isLoading}>
+              Finalizar compra
+            </Button>
+          </form>
+          {success && <p className="text-green-600 mt-4 font-medium">{success}</p>}
+        </div>
+    </div>
     </Layout>
   );
 }
