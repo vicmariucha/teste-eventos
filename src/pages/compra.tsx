@@ -4,12 +4,14 @@ import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 import { validateEmail } from '../utils/validators';
 import Head from 'next/head';
+import Toast from '../components/Toast';
 
 export default function Compra() {
   const [form, setForm] = useState({ nome: '', email: '', quantidade: 1 });
   const [errors, setErrors] = useState<{ nome?: string; email?: string }>({});
-  const [success, setSuccess] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,9 +28,14 @@ export default function Compra() {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      setSuccess(`Compra realizada com sucesso para ${form.nome}, ${form.quantidade} ingresso(s)!`);
+      setToastMessage(`Compra realizada com sucesso para ${form.nome}, ${form.quantidade} ingresso(s)!`);
       setForm({ nome: '', email: '', quantidade: 1 });
+      setShowToast(true);
     }, 1200);
+  };
+
+  const handleCloseToast = () => {
+    setShowToast(false);
   };
 
   return (
@@ -42,12 +49,13 @@ export default function Compra() {
         <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-2xl font-bold mb-6">Finalizar compra</h1>
           <form onSubmit={handleSubmit}>
-          <Input
-            label="Nome completo"
-            name="nome"
-            value={form.nome}
-            onChange={e => setForm({ ...form, nome: e.target.value })}
-            error={errors.nome}/>
+            <Input
+              label="Nome completo"
+              name="nome"
+              value={form.nome}
+              onChange={e => setForm({ ...form, nome: e.target.value })}
+              error={errors.nome}
+            />
             <Input
               label="E-mail"
               name="email"
@@ -67,9 +75,12 @@ export default function Compra() {
               Finalizar compra
             </Button>
           </form>
-          {success && <p className="text-green-600 mt-4 font-medium">{success}</p>}
         </div>
-    </div>
+      </div>
+
+      {showToast && (
+        <Toast message={toastMessage} onClose={handleCloseToast} />
+      )}
     </Layout>
   );
 }
