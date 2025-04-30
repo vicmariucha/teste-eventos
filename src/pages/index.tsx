@@ -10,22 +10,32 @@ export default function Home() {
         <title>Dev Music Festival 2025</title>
         <meta name="description" content="Página oficial do Dev Music Festival 2025" />
       </Head>
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Dev Music Festival 2025</h1>
-        <Image
-          src="/images/banner.png"
-          alt="Público animado no festival"
-          width={500}
-          height={50}
-          className="rounded shadow-md object-cover w-full transition-transform duration-300 hover:scale-90"
-        />
 
-        <p className="mb-6 text-gray-700">
-          Um evento que une música e tecnologia como nunca antes!
+      <div className="max-w-4xl mx-auto text-center px-4 mb-10">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-purple-700  mt-7 mb-8">DEV MUSIC FESTIVAL 2025</h1>
+
+        <p className="mb-7 text-lg text-gray-700 leading-relaxed">
+          Prepare-se para o maior encontro entre código e batidas! O Dev Music Festival 2025 celebra a fusão entre a criatividade da música e a inovação da tecnologia. Uma experiência única com shows incríveis, palestras inspiradoras e muita conexão entre desenvolvedores, artistas e entusiastas do futuro.
         </p>
-        <Link href="/evento" className="inline-block bg-purple-500 text-white py-2 px-6 rounded hover:bg-purple-700 transition"> 
+
+
+        <Link
+          href="/evento"
+          className="inline-block bg-purple-600 text-white text-lg font-medium py-3 px-8 rounded-lg shadow-md hover:bg-purple-700 transition"
+        >
           Ver detalhes
         </Link>
+      </div>
+
+      <div className="w-screen relative overflow-hidden">
+        <Image
+          src="/images/banner.jpg"
+          alt="Público animado no festival"
+          width={1900}
+          height={600}
+          className="w-1900 h-[600px] object-cover object-center"
+          priority
+        />
       </div>
     </Layout>
   );

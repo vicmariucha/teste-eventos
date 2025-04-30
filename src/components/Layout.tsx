@@ -9,8 +9,8 @@ type Props = { children: ReactNode };
 
 export default function Layout({ children }: Props) {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
-      <header className="bg-purple-500 text-white p-4">
+<div className="min-h-screen flex flex-col bg-gray-100 overflow-x-hidden">
+<header className="bg-purple-500 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="font-bold text-lg">
             Eventos Dev
@@ -18,7 +18,7 @@ export default function Layout({ children }: Props) {
         </div>
       </header>
 
-      <main className="flex-grow container mx-auto py-8 px-4">
+      <main className="flex-grow w-full">
         {children}
       </main>
 
@@ -28,7 +28,7 @@ export default function Layout({ children }: Props) {
             &copy; 2025 Eventos Dev. Desenvolvido por{" "}
             <a
               href="https://www.linkedin.com/in/victoria-mariucha/"
-              className="underline font-medium hover:text-purple-700 transition"
+              className="underline font-medium hover:text-pink-400 transition"
               target="_blank" rel="noopener noreferrer"
             >
               Vic Mariucha
@@ -36,13 +36,13 @@ export default function Layout({ children }: Props) {
           </p>
           <div className="flex gap-4 mx-4">
             <a href="https://github.com/vicmariucha" target="_blank" aria-label="GitHub">
-              <Icon icon={githubIcon} className="w-5 h-5 hover:text-purple-700 transition" />
+              <Icon icon={githubIcon} className="w-5 h-5 hover:text-pink-400 transition" />
             </a>
             <a href="https://x.com/notifications" target="_blank" aria-label="X/Twitter">
-              <Icon icon={xIcon} className="w-5 h-5 hover:text-purple-700 transition" />
+              <Icon icon={xIcon} className="w-5 h-5 hover:text-pink-400 transition" />
             </a>
             <a href="mailto:vicmariucha@gmail.com" aria-label="Email">
-              <Icon icon={mailIcon} className="w-5 h-5 hover:text-purple-700 transition" />
+              <Icon icon={mailIcon} className="w-5 h-5 hover:text-pink-400 transition" />
             </a>
           </div>
         </div>
