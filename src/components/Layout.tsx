@@ -83,7 +83,7 @@ export default function Layout({ children }: Props) {
             <a href="https://github.com/vicmariucha" target="_blank" aria-label="GitHub">
               <Icon icon={githubIcon} className="w-5 h-5 hover:text-pink-400 transition" />
             </a>
-            <a href="https://x.com/notifications" target="_blank" aria-label="X/Twitter">
+            <a href="https://x.com/vicmariucha" target="_blank" aria-label="X/Twitter">
               <Icon icon={xIcon} className="w-5 h-5 hover:text-pink-400 transition" />
             </a>
             <a href="mailto:vicmariucha@gmail.com" aria-label="Email">
