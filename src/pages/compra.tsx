@@ -45,8 +45,8 @@ export default function Compra() {
         <meta name="description" content="Formulário para compra de ingressos" />
       </Head>
 
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
-        <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+        <div className="max-w-md w-full dark:bg-purple-900 bg-white rounded-xl shadow-lg p-8">
           <h1 className="text-2xl font-bold mb-6">Finalizar compra</h1>
           <form onSubmit={handleSubmit}>
             <Input

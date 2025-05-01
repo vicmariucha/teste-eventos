@@ -4,32 +4,34 @@ import { Icon } from "@iconify/react";
 import githubIcon from "@iconify/icons-tabler/brand-github";
 import xIcon from "@iconify/icons-tabler/brand-x";
 import mailIcon from "@iconify/icons-tabler/mail";
+import ThemeToggle from "./ThemeToggle"; 
 
 type Props = { children: ReactNode };
 
 export default function Layout({ children }: Props) {
   return (
-<div className="min-h-screen flex flex-col bg-gray-100 overflow-x-hidden">
-<header className="bg-purple-500 text-white p-4">
+    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 text-black dark:text-white transition-colors">
+      <header className="bg-purple-500 dark:bg-purple-900 text-white p-4">
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="font-bold text-lg">
             Eventos Dev
           </Link>
+
+          <ThemeToggle />
         </div>
       </header>
 
-      <main className="flex-grow w-full">
-        {children}
-      </main>
+      <main className="flex-grow w-full">{children}</main>
 
-      <footer className="bg-purple-500 text-white p-4">
+      <footer className="bg-purple-500 dark:bg-purple-900 text-white p-4">
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-0 sm:justify-center items-center w-full">
           <p>
             &copy; 2025 Eventos Dev. Desenvolvido por{" "}
             <a
               href="https://www.linkedin.com/in/victoria-mariucha/"
               className="underline font-medium hover:text-pink-400 transition"
-              target="_blank" rel="noopener noreferrer"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Vic Mariucha
             </a>

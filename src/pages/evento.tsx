@@ -39,32 +39,32 @@ export default function Evento() {
 
       <div className="bg-gradient-gray-200 text-purple-600 py-16 px-4 min-h-screen">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-8">DEV MUSIC FESTIVAL 2025</h1>
+          <h1 className="text-4xl md:text-5xl dark:text-purple-700 font-extrabold mb-8">DEV MUSIC FESTIVAL 2025</h1>
 
-          <div className="space-y-4 text-lg text-purple-900 mb-6 text-left md:text-center">
+          <div className="space-y-4 text-lg text-purple-900 dark:text-white mb-6 text-left md:text-center">
             <div className="flex items-center gap-3 justify-center">
-              <Calendar className="text-pink-400" />
+              <Calendar className="text-pink-400 dark:text-pink-700" />
               <span><strong>15 agosto 2025</strong></span>
             </div>
             <div className="flex items-center gap-3 justify-center">
-              <Clock className="text-pink-400" />
+              <Clock className="text-pink-400 dark:text-pink-700" />
               <span>17:00</span>
             </div>
             <div className="flex items-center gap-3 justify-center">
-              <MapPin className="text-pink-400" />
+              <MapPin className="text-pink-400 dark:text-pink-700" />
               <span>Arena TechMusic – São Paulo - SP</span>
             </div>
             <div className="flex items-center gap-3 justify-center">
-              <DollarSign className="text-pink-400" />
+              <DollarSign className="text-pink-400 dark:text-pink-700" />
               <span>R$ 80 - 440</span>
             </div>
           </div>
 
-          <p className="mb-10 font-medium text-purple-900">{countdown}</p>
+          <p className="mb-10 font-medium text-purple-900 dark:text-white">{countdown}</p>
 
           <Link
             href="/compra"
-            className="inline-block bg-pink-500 hover:bg-pink-600 transition text-lg text-white font-bold px-10 py-4 rounded-xl shadow-lg"
+            className="inline-block bg-pink-500 hover:bg-pink-600 dark:bg-purple-900 transition text-lg text-white font-bold px-10 py-4 rounded-xl shadow-lg"
           >
             COMPRAR INGRESSO
           </Link>
@@ -85,8 +85,8 @@ export default function Evento() {
               alt={img.alt}
               width={400}
               height={300}
-              className="rounded-xl shadow-lg object-cover h-60 w-full transition-transform duration-300 hover:scale-105"
-            />
+              className="rounded-xl shadow-lg object-cover  h-60 w-full dark:contrast-50 transition-transform duration-300 hover:scale-105"
+              />
           ))}
         </div>
       </div>
