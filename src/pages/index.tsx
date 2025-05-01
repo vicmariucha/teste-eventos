@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <link rel="icon" type="image/png" href="/images/favicon.png" />
         <title>Dev Music Festival 2025</title>
         <meta name="description" content="Página oficial do Dev Music Festival 2025" />
       </Head>

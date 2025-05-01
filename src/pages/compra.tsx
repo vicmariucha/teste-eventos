@@ -35,21 +35,16 @@ export default function Compra() {
     const dataEvento = '18/08/2025 às 20:30';
     const localEvento = 'Arena TechMusic - Av. das Nações Unidas, 4777 - São Paulo/SP';
   
-    // Fundo
     doc.setFillColor(gray);
     doc.rect(15, 15, pageWidth - 30, pageHeight - 30, 'F');
-  
-    // Borda 
     doc.setLineWidth(2);
     doc.setDrawColor(primaryColor);
     doc.rect(15, 15, pageWidth - 30, pageHeight - 30);
   
-    // Sidebar 
     const sidebarWidth = 90;
     const sidebarX = 20;
     const sidebarCenterX = sidebarX + sidebarWidth / 2;
-  
-    // Logo 
+
     const logo = new Image();
     logo.src = '/images/favicon.png';
     await new Promise((resolve) => {
@@ -63,7 +58,6 @@ export default function Compra() {
       };
     });
   
-    // QR Code 
     const qrData = `Nome: ${form.nome} | Show: ${form.show} | Ingresso: ${form.tipoIngresso}`;
     const qrCodeDataUrl = await QRCode.toDataURL(qrData);
     const qrSize = 50;
@@ -71,31 +65,28 @@ export default function Compra() {
     const qrY = 75;
     doc.addImage(qrCodeDataUrl, 'PNG', qrX, qrY, qrSize, qrSize);
   
-    // Linha vertical separadora
     const separatorX = sidebarX + sidebarWidth + 10;
     doc.setDrawColor('#d1d5db');
     doc.line(separatorX, 20, separatorX, pageHeight - 20);
   
-    // Título 
     doc.setFontSize(18);
     doc.setTextColor(primaryColor);
     doc.text('DEV MUSIC FESTIVAL 2025', pageWidth / 2 + 50, 35, { align: 'center' });
   
-    // Conteúdo à direita
     doc.setFontSize(11);
     doc.setTextColor(33, 33, 33);
-  
+
     const contentX = separatorX + 15;
     const contentY = 55;
     const lineGap = 14;
-  
+
     const drawField = (label: string, value: string, line: number) => {
       doc.setFont('normal');
       doc.text(`${label}:`, contentX, contentY + lineGap * line);
       doc.setFont('bold');
       doc.text(value, contentX + 95, contentY + lineGap * line); 
     };
-  
+
     drawField('Nome', form.nome, 0);
     drawField('E-mail', form.email, 1);
     drawField('Show', form.show, 2);
@@ -112,12 +103,11 @@ export default function Compra() {
     drawField('Data da compra', dataCompra, nextLine + 1);
     drawField('Número do ingresso', numeroIngresso, nextLine + 2);
   
-    // Rodapé
     doc.setFontSize(9);
     doc.setTextColor(100);
     doc.setFont('normal');
     doc.text('Este ingresso é pessoal e intransferível. Apresente o QR Code na entrada.', contentX, pageHeight - 25);
-  
+
     doc.save(`Ingresso_${form.nome.replace(/\s/g, '_')}.pdf`);
   };
 
@@ -135,15 +125,11 @@ export default function Compra() {
 
     setIsLoading(true);
 
-    // Definir a mensagem do toast
     setToastMessage(
       `Compra realizada com sucesso para ${form.nome}, ${form.quantidade} ingresso(s) do tipo ${form.tipoIngresso} para o show ${form.show}!`
     );
-
-    // Mostrar o toast
     setShowToast(true);
 
-    // Gerar PDF após exibição do toast
     setTimeout(async () => {
       await gerarPDF();
       setForm({
@@ -154,7 +140,7 @@ export default function Compra() {
         tipoIngresso: 'Pista',
       });
       setIsLoading(false);
-    }, 1200);  // O PDF será gerado após o tempo necessário para o toast aparecer
+    }, 3500);
   };
 
   const handleCloseToast = () => {
@@ -187,14 +173,13 @@ export default function Compra() {
               error={errors.email}
             />
             <Input
-              label="Quantidade de ingressos"
-              name="quantidade"
+              label="Quantidade"
               type="number"
-              min={1}
               value={form.quantidade}
-              onChange={e => setForm({ ...form, quantidade: Number(e.target.value) })}
+              isStepper
+              onIncrement={() => setForm({ ...form, quantidade: form.quantidade + 1 })}
+              onDecrement={() => setForm({ ...form, quantidade: Math.max(1, form.quantidade - 1) })}
             />
-
             <label className="block mb-1 font-medium text-sm text-gray-700 dark:text-white">Show</label>
             <select
               name="show"
