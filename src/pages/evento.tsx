@@ -9,7 +9,6 @@ import ModalImagem from "@/components/ModalImagem";
 export default function Evento() {
   const [countdown, setCountdown] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
@@ -44,25 +43,21 @@ export default function Evento() {
   }, []);
 
   const openModal = (index: number) => {
-    setModalImage(images[index].src);
     setCurrentIndex(index);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalImage("");
   };
 
   const nextImage = () => {
     const nextIndex = (currentIndex + 1) % images.length;
-    setModalImage(images[nextIndex].src);
     setCurrentIndex(nextIndex);
   };
 
   const prevImage = () => {
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    setModalImage(images[prevIndex].src);
     setCurrentIndex(prevIndex);
   };
 
@@ -145,7 +140,6 @@ export default function Evento() {
         onNext={nextImage}
         onPrev={prevImage}
       />
-
     </Layout>
   );
 }
