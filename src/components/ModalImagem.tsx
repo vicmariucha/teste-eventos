@@ -44,21 +44,21 @@ const ModalImagem = ({isOpen,
 
         <button
           onClick={onPrev}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-gray-800 p-2 rounded-full"
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-purple-500 dark:bg-purple-800 p-2 rounded-full"
         >
           {"<"}
         </button>
 
         <button
           onClick={onNext}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-gray-800 p-2 rounded-full"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-purple-500 dark:bg-purple-800 p-2 rounded-full"
         >
           {">"}
         </button>
 
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-white bg-gray-800 p-2 rounded-full z-10"
+          className="absolute top-2 right-2 text-white bg-purple-500 dark:bg-purple-800 p-2 rounded-full z-10"
         >
           X
         </button>

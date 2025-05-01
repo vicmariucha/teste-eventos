@@ -78,7 +78,7 @@ export default function Evento() {
           <h1 className="text-4xl md:text-5xl font-extrabold text-purple-700">DEV MUSIC FESTIVAL 2025</h1>
         </div>
 
-        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-xl shadow-lg">
+        <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
           <div className="space-y-4 text-lg text-purple-900 dark:text-white">
             <div className="flex items-center gap-3">
               <Calendar className="text-pink-400 dark:text-pink-700" />
@@ -105,7 +105,7 @@ export default function Evento() {
 
             <Link
               href="/compra"
-              className="inline-block bg-pink-500 hover:bg-pink-600 dark:bg-purple-900 transition text-lg text-white font-bold px-10 py-4 rounded-xl shadow-lg"
+              className="inline-block bg-pink-500 hover:bg-pink-600 transition text-lg text-white font-bold px-10 py-4 rounded-xl shadow-lg"
             >
               COMPRAR INGRESSO
             </Link>
