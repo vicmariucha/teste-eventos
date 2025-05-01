@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
+import FAQ from "@/components/FAQ"; 
 
 export default function Home() {
   return (
@@ -37,6 +38,9 @@ export default function Home() {
           priority
         />
       </div>
+
+      <FAQ />                            
+
     </Layout>
   );
 }
